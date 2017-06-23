@@ -9,7 +9,7 @@ void tempCel(float startTemp, float stepSize, float endTemp)
 {
 	for (float currentTemp = startTemp; currentTemp <= endTemp; currentTemp += stepSize)
 	{
-		cout << currentTemp << endl;
+		cout << "In Celsius: " << currentTemp << "\nIn Farenheit: " << (currentTemp * (9/5) + 32) << endl;
 	}
 }
 
@@ -33,7 +33,7 @@ int main()
 	{
 		cin >> stepSize;
 	} while (stepSize > (endTemp - startTemp));
-	
+
 	tempCel(startTemp, stepSize, endTemp);
 
 	return 0;
