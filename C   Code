@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include "Header.h"
+using namespace std;
+float startTemp = 0.0;
+float endTemp = 0.0;
+float stepSize = 0.0;
+void tempCel(float startTemp, float stepSize, float endTemp)
+{
+	for (float currentTemp = startTemp; currentTemp <= endTemp; currentTemp += stepSize)
+	{
+		cout << currentTemp << endl;
+	}
+}
+
+
+int main()
+{
+	cout << "Enter a lower limit Temperature (in Celsius): ";
+	do
+	{
+		cin >> startTemp;
+	} while (startTemp < 10);
+
+	cout << "Enter an upper limit temperature (in Celcius): ";
+	do
+	{
+		cin >> endTemp;
+	} while (endTemp < startTemp && endTemp > 50000);
+
+	cout << "Enter a step size temperature (in Celcius): ";
+	do
+	{
+		cin >> stepSize;
+	} while (stepSize > (endTemp - startTemp));
+	
+	tempCel(startTemp, stepSize, endTemp);
+
+	return 0;
+}
